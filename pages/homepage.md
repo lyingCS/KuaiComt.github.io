@@ -1,57 +1,46 @@
 ---
-title: "KuaiSAR"
+title: "KuaiComt"
 layout: default
 sitemap: false
 permalink: /
 ---
 
-# KuaiSAR
+# KuaiComt
 
-*KuaiSAR* is a unified search and recommendation dataset containing the genuine user behavior logs collected from the short-video mobile app, [Kuaishou (快手)](https://www.kuaishou.com/en), a leading short-video app in China with over 300 million daily active users.   
-**It is the first dataset which records genuine user behaviors, the occurrence of each interaction within either search or recommendation service, and the users' transitions between the two services!** 
+*KuaiComt* is a comprehensive short video recommendation dataset that includes abundant comment text and interaction data. It contains real user behavior logs collected from the short-video mobile app [Kuaishou](https://www.kuaishou.com/en), a leading short video app in China with over 400 million daily active users. On average, users spend over 120 minutes on the app each day, with more than 7 minutes (over 5%) spent in the video comments section. The comments section boasts a UV penetration rate of over 60%.
+
+**This is the first recommendation dataset that not only records item text and interaction data but also includes abundant comment text and interaction data!**
 
 
+## Overview
 
-## Overview:
+The following figure provides an example of the dataset. When users enter the app, they can scroll up and down to browse different videos. Additionally, users can click the comment button on the right side of the video to enter the comments section, where they can scroll through comments and engage in interactive behaviors such as likes and replies.
 
-As shown in the following figure, Kuaishou provides both search and recommendation services.
-The figure illustrates integrated search and recommendation scenarios in Kuaishou app. 
-When watching a video, the user can either scroll up and down to browse different videos with the recommendation service (from middle to left); or
-tap on the magnifying glass to access the search service (from middle to right).
 
-![kuaidata](../assets/fig/intro1.png)
+![kuaidata](../assets/fig/example.png)
 
-From the user's perspective, the boundary between search and recommendation services may not be distinct. 
-Users experience a unified service that combines both search and recommendation functionalities.
-In the recommendation service, as illustrated in the figures below (a. and b.), there exist several designs that prompt users to transition into the search service. 
-Similarly, in the search service, as shown in the figures below (c. and d.), various recommended queries are presented to stimulate users to engage in further searching.
+The other related datasets are: [KuaiRec](https://kuairec.com/), [KuaiRand](https://kuairand.com/) and [KuaiSAR](https://kuaisar.github.io/).
 
-![kuaidata](../assets/fig/intro2.png)
-
-The other two related datasets are: [KuaiRec](https://kuairec.com/) and [KuaiRand](https://kuairand.com/).
- 
 ### Advantages:
 
-Compared with other existing datasets, KuaiSAR has the following advantages:
+Compared with other existing datasets, KuaiComt has the following advantages:
 
-- ✅ It is the first dataset with user genuine search and recommendation behaviors. 
-- ✅ It documents the sources of users' search behaviors, such as actively typing-in searches and clicking on recommended queries.
-- ✅ It comprehensively captures users' transitions between search and recommendation services, such as documenting whether users initiate a search while watching a video within the recommendation system.
-- ✅ It provides abundant side information for both users and items.
-- ✅ It logs users' authentic interactions, including both positive and negative feedback.
+- ✅ It is the first dataset that includes real user interaction behavior with comments.
+- ✅ It contains abundant text features, such as video caption text and comment content text.
+- ✅ It has the most comprehensive side information, including explicit user IDs, video IDs, comment IDs, interaction timestamps, and their abundant features.
+- ✅ It provides various feedback signals (such as clicks, likes, and watch time for videos, and likes and replies for comments) for each interaction with videos and comments to describe comprehensive user feedback.
 
 ### Statistics
 
 Here we show some basic statistics.
 Check this page for more detailed [Descriptions and Analytics](./detailed_statistics.html).
 
-KuaiSAR contains genuine search and recommendation behaviors of 25,877 users within a span of 19 days on the Kuaishou app.
-This dataset filters users based on a single condition: that users have used both search and recommendation services within the specified time period ranging from 2023/5.22 14:30 to 2023/6.10 9:30. 
-<!-- This dataset filters users based on a single condition: that users have used both search and recommendation services within the specified time period ranging from 2023/5.22 14:50 to 2023/5.31 14:50.  -->
-As a result, the final dataset encompasses users with diverse levels of activity in either the search or recommendation services, thereby offering a comprehensive representation of users with varying degrees of engagement.
+KuaiComt contains the real behavior of 34,701 users on the Kuaishou app from September 30, 2023, to November 3, 2023. Due to the large number of comment impressions to users, we only provide data on user interactions with comments (likes and replies). Videos with fewer than 55 comments and comments with fewer than 2 interactions were filtered out. Additionally, video titles and comment texts were anonymized.
+
 Basic statistics of this dataset in the are summarized as follows:
 
-**KuaiSAR**
+**KuaiComt**
+
 <style>
 table {
   width: 80%;
@@ -60,19 +49,16 @@ table {
 }
 </style>
 
-| Dataset | #Users  | #Items    | #Queries | #Actions    |
-|---------|---------|------------|---------|------------|
-| S-data  | 25,877  | 3,026,189 | 453,667   | 5,059,169   |
-| R-data  | 25,877  | 4,046,367 | -       | 14,605,716 |
-| Total   | 25,877  | 6,890,707 | 453,667   | 19,664,885 |
+| Dataset | #Users  | #Videos | #Comments | #Impressions-V | #OpenComments-V | Interactions-C |
+|---------|---------|------------|---------|------------|------------|------------|
+| KuaiComt | 34,701 | 82,452 | 16,352,904 | 119,696,682 | 16,033,443 | 1,002,672 |
 
-where the 'S' and 'R' denote search and recommendation respectively.
-
+where 'Impressions-V' denotes the impressions of videos to users, 'OpenComments-V' denotes the behavior of users opening the comments section, and 'Interactions-C' denotes user interactions with comments (such as likes or replies).
 
 In order to facilitate researchers to conduct experiments more quickly, we have also released a smaller version of the data.
-*The difference is that KuaiSAR contains data from 2023/5/22 14:30 to 2023/6/10 9:30, while KuaiSAR-small only contains data from 2023/5/22 14:50 to 2023/5/31 14:50.*
 
-**KuaiSAR-small**
+**KuaiSAR-1M**
+
 <style>
 table {
   width: 80%;
@@ -81,25 +67,23 @@ table {
 }
 </style>
 
-| Dataset | #Users | #Items | #Queries | #Actions |
+| Dataset  | #Users | #Videos | #Comments  | #Impressions-V |
 |-----|-----|-----|-----|-----|
-|  S-data  |  25,877   |  2,012,476   |  267,608   |   3,171,231  |
-|  R-data   |  25,877   |  2,281,034   | --  |   7,493,101  |
-|  Total   |   25,877  |   4,195,529  |   267,608  |  10,664,332   |
+| KuaiComt | 34,701 | 82,452  | 16,352,904 | 119,696,682    |
 
 The short descriptions for each feature filed are listed as below. Please refer to this [page](./detailed_statistics.html) for more details and examples.
 
 | **Feature**:  | Detailed Descriptions. |
 |------------------------|---------------------------------------------------------------------------------------|
-| **User&Item feature**:  | Users and items have abundant side information. 5 (18) features for users (items). |
-| **S-action feature**:  | S-actions have 9 features, e.g., search session IDs, query keywords, and sources of entering the search service. |
-| **R-action feature**:  | R-actions has 12 features, including 9 types of user feedback, e.g., likes, follows, and entering search. |
-| **Social network**:    | 576 users have friends. |
-
+| **User feature**:  | Users have abundant side information, e.g., user_active_degree, follow_count. |
+| **Video feature**: | Videos have abundant side information, e.g., caption, duration. |
+| **Comment feature**: | Comments have abundant side information, e.g., comment content, comment_like_cnt. |
+| **V-inter feature** | Video-interactions have 12 features, e.g., comment stay time, play time, likes and follows. |
+| **C-inter feature** | Comment-interactions has 2 features, including 2 types of user feedback: likes and replies. |
 
 ## Download the data:
 
-KuaiSAR has been shared at [https://zenodo.org/record/8181109](https://zenodo.org/record/8181109).
+KuaiComt has been shared at [https://zenodo.org/record/8181109](https://zenodo.org/record/8181109).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8181109.svg)](https://doi.org/10.5281/zenodo.8181109)
 
@@ -109,26 +93,28 @@ You can download the dataset from this [link](https://zenodo.org/record/8181109)
 
 **Note:**
 
-* The 'KuaiSAR_v2.zip' file is for the **KuaiSAR** dataset.
-* The 'KuaiSAR.zip' file is for the **KuaiSAR-small** dataset.
+* The 'KuaiComt.zip' file is for the complete **KuaiComt** dataset.
+* The 'KuaiComt-1M.zip' file is for the **KuaiComt-1M** dataset.
 
 The screenshot of the data download page:
 ![](../assets/fig/data_file.png)
 
 OPTION 2: Download via the 'wget' command tool:
 
-For the **KuaiSAR** dataset:
-```bash
-wget https://zenodo.org/record/8181109/files/KuaiSAR_v2.zip
+For the **KuaiComt** dataset:
 
-unzip KuaiSAR_v2.zip
+```bash
+wget https://zenodo.org/record/8181109/files/KuaiComt.zip
+
+unzip KuaiComt.zip
 ```
 
-For the **KuaiSAR-small** dataset:
-```bash
-wget https://zenodo.org/record/8181109/files/KuaiSAR.zip
+For the **KuaiComt-1M** dataset:
 
-unzip KuaiSAR.zip
+```bash
+wget https://zenodo.org/record/8181109/files/KuaiComt-1M.zip
+
+unzip KuaiComt-1M.zip
 ```
 
 
@@ -148,21 +134,13 @@ This work is licensed under a
 
 ## Contact
 
-If you have any questions, please feel free to contact us through [github issues](https://github.com/KuaiSAR/KuaiSAR.github.io/issues) or emails (sunzhongxiang@ruc.edu.cn, zihua_si@ruc.edu.cn)
+If you have any questions, please feel free to contact us through [github issues](https://github.com/KuaiSAR/KuaiSAR.github.io/issues) or emails (zhangchangshuo@kuaishou.com)
 
 ## Citation
-
 
 If you find it helpful, please cite our paper (
  [![LINK](https://img.shields.io/badge/-Paper%20Link-lightgrey)](https://arxiv.org/abs/2306.07705) [![PDF](https://img.shields.io/badge/-PDF-red)](https://arxiv.org/pdf/2306.07705.pdf) ) or cite our website (https://kuaisar.github.io)
 
 ```
-@article{Sun2023KuaiSAR,
-  title={KuaiSAR: A Unified Search And Recommendation Dataset},
-  author={Zhongxiang Sun and Zihua Si and Xiaoxue Zang and Dewei Leng and Yanan Niu and Yang Song and Xiao Zhang and Jun Xu},
-  booktitle={Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
-  url = {https://doi.org/10.1145/3583780.3615123},
-  doi = {10.1145/3583780.3615123},
-  year={2023},
-}
+
 ```

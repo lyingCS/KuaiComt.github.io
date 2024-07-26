@@ -1,13 +1,13 @@
 # KuaiComt
 
-*KuaiComt* is a comprehensive short video recommendation dataset that includes extensive comment text and interaction information. It contains real user behavior logs collected from the short-video mobile app [Kuaishou](https://www.kuaishou.com/en), a leading short video app in China with over 400 million daily active users. On average, users spend over 120 minutes on the app each day, with more than 7 minutes (over 5%) spent in the video comment section. The comment section boasts a UV penetration rate of over 60%.
+*KuaiComt* is a comprehensive short video recommendation dataset that includes abundant comment text and interaction data. It contains real user behavior logs collected from the short-video mobile app [Kuaishou](https://www.kuaishou.com/en), a leading short video app in China with over 400 million daily active users. On average, users spend over 120 minutes on the app each day, with more than 7 minutes (over 5%) spent in the video comments section. The comments section boasts a UV penetration rate of over 60%.
 
-**This is the first recommendation dataset that not only records item text and interaction data but also includes extensive comment text and interaction information!**
+**This is the first recommendation dataset that not only records item text and interaction data but also includes abundant comment text and interaction data!**
 
 
 ## Overview
 
-The following figure provides an example of the dataset. When users enter the app, they can scroll up and down to browse different videos. Additionally, users can click the comment button on the right side of the video to enter the comment section, where they can scroll through comments and engage in interactive behaviors such as liking and commenting.
+The following figure provides an example of the dataset. When users enter the app, they can scroll up and down to browse different videos. Additionally, users can click the comment button on the right side of the video to enter the comments section, where they can scroll through comments and engage in interactive behaviors such as likes and replies.
 
 
 ![kuaidata](./assets/fig/example.png)
