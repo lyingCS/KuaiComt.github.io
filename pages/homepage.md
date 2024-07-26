@@ -75,9 +75,9 @@ The short descriptions for each feature filed are listed as below. Please refer 
 
 | **Feature**:  | Detailed Descriptions. |
 |------------------------|---------------------------------------------------------------------------------------|
-| **User feature**:  | Users have abundant side information, e.g., user_active_degree, follow_count. |
+| **User feature**:  | Users have abundant side information, e.g., user active degree, follow count. |
 | **Video feature**: | Videos have abundant side information, e.g., caption, duration. |
-| **Comment feature**: | Comments have abundant side information, e.g., comment content, comment_like_cnt. |
+| **Comment feature**: | Comments have abundant side information, e.g., comment content, comment like cnt. |
 | **V-inter feature** | Video-interactions have 12 features, e.g., comment stay time, play time, likes and follows. |
 | **C-inter feature** | Comment-interactions has 2 features, including 2 types of user feedback: likes and replies. |
 
