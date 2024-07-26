@@ -1,5 +1,5 @@
 ---
-title: "KuaiSAR"
+title: "KuaiComt"
 layout: default
 sitemap: false
 permalink: /detailed_statistics.html
@@ -12,129 +12,106 @@ permalink: /detailed_statistics.html
 File organization:
 
 ```bash
-  KuaiSR
-  ├── rec_inter.csv          
-  ├── src_inter.csv
-  ├── social_network.csv
+  KuaiComt
+  ├── user_video_inter.csv          
+  ├── user_comment_inter.csv
   ├── user_features.csv
-  └── item_features.csv
+  ├── video_features.csv
+  └── comment_features.csv
 ```
 
+#### 1. Descriptions of the fields in user_video_inter.csv
 
-#### 1. Descriptions of the fields in rec_inter.csv
-
-
-| Field Name           | Description                                                  | Type      | Example       |
-| -------------------- | ------------------------------------------------------------ | --------- | ------------- |
-| user_id              | The ID of the user.                                          | int64     | 1             |
-| item_id              | The ID of the viewed item.                                   | int64     | 1             |
-| playing_time         | The duration this video(item) has been played by this user (millisecond).      | float64   | 60792.0       |
-| duration_ms          | The total duration of this video (millisecond).                             | float64   | 45400.0       |
-| time                 | Human-readable date for this interaction (China,  Beijing time zone) | timestamp | 2023-05-22 15:53:20 |
-| timestamp            | Unix timestamp (millisecond).                                | float64   | 1.684742e+12  |
-| click                | Whether the user clicks the item.                            | int64     | 1             |
-| forward              | Whether the user forwards the item.                          | int64     | 1             |
-| like                 | Whether the user likes the item.                             | int64     | 1             |
-| follow               | Whether the user follows the author of from the item.        | int64     | 1             |
-| search               | Whether the user actively searches while watching items in the recomendation system.           | int64     | 1             |
-| search_item_related  | Whether the content that users search for related to the currently watched video. | int64     | 1             |
-
-For recommendation actions, the ratio of data with click=0 and click=1 is approximately 1:1. We recommend using 'click' to distinguish positive and negative samples.
-Research papers on recommender systems typically predict users' implicit feedback, indicating whether users click on items. We recommend using this label as the implicit feedback label. In the short video context, the definition of 'click' is complex and business-specific (e.g., video playback duration). Hereby, 'click' can be simplified as implicit feedback.
-
-Please note: The "time" and "timestamp" in this table refer to the time when the system distributes items to users. Typically, the system sends multiple items to users at once, which can result in interactions between the user and some items having the same timestamp.
-
-It is important to note that the 'search_item_related' label is only valid when 'search' is equal to 1. Additionally, both 'search_item_related' and 'search' only consider the user's active search behavior by clicking on the magnifying glass icon, without taking into account other search behavior such as clicking on recommended queries in the comment section.
+| Field Name        | Description                                                  | Type    | Example       |
+| ----------------- | ------------------------------------------------------------ | ------- | ------------- |
+| user_id           | The ID of the user.                                          | int64   | 2924305332    |
+| video_id          | The ID of the viewed video.                                  | int64   | 110378652104  |
+| p_hourmin         | The time of this interaction (format: HHSS).                 | int64   | 1500          |
+| time_ms           | Unix timestamp (millisecond).                                | float64 | 1696141175214 |
+| is_click          | Whether the user clicks the video.                           | int64   | 0             |
+| is_like           | Whether the user likes the video.                            | int64   | 0             |
+| is_follow         | Whether the user follows the author of the video.            | int64   | 0             |
+| is_comment        | Whether the user comments the video.                         | int64   | 0             |
+| is_forward        | Whether the user forwards the video.                         | int64   | 0             |
+| is_collect        | Whether the user collects the video.                         | int64   | 0             |
+| is_hate           | Whether the user hates the video.                            | int64   | 0             |
+| long_view         | A binary feedback signal. It equals 1 when: `play_time_ms >= duration_ms if duration_ms <= 18,000 ms`, or `play_time_ms >=18,000 ms if duration_ms > 18,000 ms`. | int64   | 0             |
+| play_time_ms      | The duration this video(item) has been played by this user (millisecond). | float64 | 5822          |
+| duration_ms       | The total duration of this video (millisecond).              | float64 | 19960         |
+| profile_stay_time | The time that the user stayed in this author’s profile.      | int64   | 0             |
+| comment_stay_time | The time that the user stayed in the comments section of this video | int64   | 0             |
 
 
-#### 2. Descriptions of the fields in src_inter.csv
+#### 2. Descriptions of the fields in user_comment_inter.csv
 
 | Field Name             | Description                                                               | Type      | Example          |
 | ---------------------- | ------------------------------------------------------------------------- | --------- | ---------------- |
-| user_id                | The ID of the user.                                                       | int64     | 14358            |
-| search_session_id      | The ID of each search session.                                            | int64     | 1                |
-| search_session_time    | Human-readable date for this search session (China, Beijing time zone).   | float64   | 2023-05-22 21:58:52 |
-| search_session_timestamp | Unix timestamp (millisecond).                                            | float64   | 1684763932919    |
-| keyword                | The keyword of the issued query in this session. Each word has been hashed into integers after anonymization.                    | list      | [20, 34, 3]      |
-| search_source          | Search source of the search session                                       | string    | USER_INPUT       |
-| item_id                | The item ID shown to the user in the search session.                      | int64     | 103656000000     |
-| click_cnt              | Whether user click the shown item.                                        | int64     | 1                |
-| item_type              | Item type of the shown item ("VIDEO", 'USER', 'IMAGE_ATLAS', 'LIVE', 'COMMODITY', 'MUSIC', 'ADVERT'). | string | VIDEO           |
+| user_id                | The ID of the user.                                                       | int64     | 358692597   |
+| comment_id | The ID of the comment.                                 | int64     | 455709716918    |
+| time_stamp | Unix timestamp (second).                                            | int64 | 1696421927 |
+| photo_id         | The ID of the video. | int64 | 65137995197 |
+| is_like    | Whether the user likes the comment. | int64 | 1      |
+| is_reply | Whether the user replies to the comment. | int64 | 0 |
 
-
-It is important to note that we define a user's search behavior as a search session, which includes issuing a query and providing feedback on the returned results. Within a search session, a user may click on multiple items after searching a query or may choose not to click on any item. Approximately 60% of the search sessions in this dataset include click behavior, meaning there is at least one item with click=1.
-The user behaviors of searching without clicking may be due to the auto-play feature of the KuaiShou app. In some cases, after the video auto-plays and satisfies the user's information needs, the user exits the search system.
-If, during usage, it's desired that each session has at least one clicked item, you can choose the earliest appearing item in this session, as it's an automatically played video.
-
-To safeguard user privacy, we adhere to strict anoymization process to transform words in 'keyword' to hashed integers. For instance, given a query 'Where is the capital city of China', the final sequence is '[1, 2, 3, 4, 5, 6, 7]', where each integer denotes a single word.
-
-Furthermore, the search engine may return results that include items not present in the recommendation system. The recommendation system only recommends items with item_type "VIDEO" or "IMAGE_ATLAS" to users, while the search engine may return other types of items such as live streams ("LIVE") or user profiles ("USER").
-
-#### 3. Descriptions of the fields in social_network.csv
+#### 3. Descriptions of the fields in user_features.csv
 
 | Field Name      | Description                                       | Type  | Example     |
 | --------------- | ------------------------------------------------- | ----- | ----------- |
-| user_id         | The ID of the user.                               | int64 | 19270 |
-| user_follow_id  | ID of the user followed by the current user.      | int64 | 19270 |
+| user_id         | The ID of the user.                               | int64 | 1905604649 |
+| user_active_degree | In the set of {‘high_active’, ‘full_active’, ‘middle_active’, ‘UNKNOWN’}. | str | "high_active" |
+| is_live_author | Is this user a live author？ | int64 | 0 |
+| produce_video_num | The number of produced videos by this user. | int64 | 1 |
+| follow_count | The number of users that this user follows. | int64 | 274 |
+| follow_user_num_range | The range of the number of users that this user follows. In the set of {‘0’, ‘(0,10]’, ‘(10,50]’, ‘(100,150]’, ‘(150,250]’, ‘(250,500]’, ‘(50,100]’, ‘500+’} | str | "(250,500]" |
+| fans_count | The number of the fans of this user. | int64 | 676 |
+| fans_user_num_range | The range of the number of fans of this user. In the set of {‘0’, ‘[1,10)’, ‘[10,100)’, ‘[100,1k)’, ‘[1k,5k)’, ‘[5k,1w)’, ‘[1w,10w)’} | str | "[100,1k)" |
+| friend_user_num_range | The range of the number of friends that this user has. In the set of {‘0’, ‘[1,5)’, ‘[5,30)’, ‘[30,60)’, ‘[60,120)’, ‘[120,250)’, ‘250+’} | str | "250+" |
+| register_days | The days since this user has registered. | int64 | 1252 |
+| gender | The gender of this user. | str | "M" |
+| age_range | The range of the age of this user. In the set of {’0-12‘, ’12-17‘, ‘18-23’, ‘24-30’, ‘31-40’, ’41-49‘, ‘50+’} | str | "12-17" |
+| onehot_feat0 | An encrypted feature of the user. Each value indicates the position of “1” in the one-hot vector. Range: {0,1, ..., 54} | int64 | 14 |
+| onehot_feat1 | An encrypted feature. Range: {0, 1, ..., 1685} | int64 | 898 |
+| onehot_feat2 | An encrypted feature. Range: {0, 1, ..., 5} | int64 | 5 |
+| onehot_feat3 | An encrypted feature. Range: {0, 1, ..., 9} | int64 | 0 |
+| onehot_feat4 | An encrypted feature. Range: {0, 1, 2} | int64 | 2 |
+| onehot_feat5 | An encrypted feature. Range: {0, 1, ..., 52} | int64 | 27 |
+| onehot_feat6 | An encrypted feature. Range: {0, 1, ..., 391} | int64 | 153 |
+| onehot_feat7 | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 3 |
+| onehot_feat8 | An encrypted feature. Range: {0, 1, ..., 4} | int64 | 3 |
+| onehot_feat9 | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 1 |
+| onehot_feat10 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat11 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat12 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat13 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat14 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat15 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat16 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat17 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat18 | An encrypted feature. Range: {0, 1, ..., 4} | int64 | 2 |
 
-'user_follow_id' only contains users who have appeared in this dataset.
 
-
-#### 4. Descriptions of the fields in user_features.csv
+#### 4. Descriptions of the fields in video_features.csv
 
 
 | Field Name         | Description                               | Type  | Example |
 | ------------------ | ----------------------------------------- | ----- | ------- |
-| user_id            | The ID of the user.                       | int64 | 6302 |
-| search_active_level| Search activity level of the user.          | int64 | 1       |
-| rec_active_level| Recommendation activity level of the user.          | int64 | 1       |
-| onehot_feat1       | An encrypted feature. Range: {0, 1, 2}    | int64 | 1       |
-| onehot_feat2       | An encrypted feature. Range: {0, 1, …, 7} | int64 | 3       |
+| video_id       | The ID of the video.                  | int64 | 107291063430 |
+| author_id | The ID of the author of this video. | int64 | 3087318004 |
+| video_type | Type of this video (NORMAL or AD). | int64 | "NORMAL" |
+| upload_dt | Upload date of this video. | str | "2023-07-06" |
+| caption | The caption text of this video | int64 | "所以，怎么会没有遗憾呢#张睿  #李晟  #花非花雾非雾" |
+| duration | The time duration of this duration (in milliseconds). | float | 36200.0 |
+| category | Category of this video | str | "明星娱乐" |
 
 
 
-#### 5. Descriptions of the fields in item_features.csv
+#### 5. Descriptions of the fields in comment_features.csv
 
 | Field Name                   | Description                                                      | Type      | Example     |
 | ---------------------------- | ---------------------------------------------------------------- | --------- | ----------- |
-| item_id                      | The ID of the item.                                              | int64     | 1           |
-| caption                      | The words of item captions after anonymization.  | list      | [1, 213, 24]|
-| author_id                    | The ID of the author (0 is padding).                                             | int64     | 10          |
-| item_type                    | The type of the item, e.g., normal video and ads.                                          | string    | NORMAL      |
-| upload_time                  | The upload datetime of the item (human readable: China,  Beijing time zone, 1970-1-1 is padding). | timestamp | 2023-04-22  |
-| upload_type                  | Type of how the item uploaded.                                         | string    | LongImport  |
-| first_level_category_id      | ID of the first level category for the item                      | int64     | 9           |
-| first_level_category_name    | Name of the first level category for the item                    | string    | 搞笑         |
-| first_level_category_name_en | English name of the first level category for the item            | string    | Funny       |
-| second_level_category_id     | ID of the first second category for the item                     | int64     | 136         |
-| second_level_category_name   | Name of the second level category for the item                   | string    | 搞笑段子      |
-| second_level_category_name_en| English name of the second level category for the item           | string    | Funny joke  |
-| third_level_category_id      | ID of the third level category for the item                      | int64     | 0           |
-| third_level_category_name    | Name of the third level category for the item                    | string    | 空           |
-| third_level_category_name_en | English name of the third level category for the item            | string    | empty       |
-| fourth_level_category_id     | ID of the fourth level category for the item                     | int64     | 0           |
-| fourth_level_category_name   | Name of the fourth level category for the item                   | string    | 空           |
-| fourth_level_category_name_en| English name of the fourth level category for the item           | string    | empty       |
-
-The four categories are labels obtained through classifying the content of items from coarser to finer granularity.
-Not every item can ensure having four levels of categories. Some items only possess relatively coarse-grained category labels.
-As for 'caption', this feature undergoes the same anoymization process as 'keyword' in the 'src_inter.tsv'. If a caption text has identical words with a query, they will have identical integers within the sequences.
-
-## Analysis
-
-This dataset filters users based on a single condition: that users have used both S\&R services  within the specified time period.
-As a result, the final dataset encompasses users with diverse levels of activity in either the search or recommendation services, thereby offering a comprehensive representation of users with varying degrees of engagement.
-To illustrate the number of S\&R behaviors among users with different activity levels, we counted the number of user-video interactions within two services respectively.
-We have grouped users based on their activity levels in the search or recommendation services. 
-The activity level is determined by the number of active days within the past month using the respective service. 
-A higher activity level indicates a larger number of active days.
-The results are illustrated as follows:
-
-<!-- <div style="display: flex;">
-    <img src="../assets/fig/reco_analysis.png" style="width: 50%;" />
-    <img src="../assets/fig/search_analysis.png" style="width: 50%;" />
-</div> -->
-![](../assets/fig/analysis.png){:width="90%"}
-
-
-The average number of search or recommendation historical behaviors per user is over one hundred.  The overall interaction frequency with the recommendation service surpasses that with the search service. Furthermore, we observed that within the groups with either the lowest or highest activity levels in recommendations, as well as within the group with high search activity, there is a higher proportion of search interactions.
+| comment_id               | The ID of the comment.                                       | int64     | 681190728207 |
+| comment_content        | The comment content text of this comment. | str   | "乱了、猫还怕老鼠[捂脸]" |
+| video_id        | The ID of the video.                      | int64 | 107255530819             |
+| comment_like_cnt     | The number of likes of this comment       | int64 | 112                      |
+| comment_reply_out | The number of replies of this comment     | int64 | 6                        |
+| show_comment_cnt_td | The number of shows of this comment.      | int64 | 645                      |
