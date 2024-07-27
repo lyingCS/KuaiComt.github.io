@@ -67,27 +67,27 @@ File organization:
 | fans_user_num_range | The range of the number of fans of this user. In the set of {‘0’, ‘[1,10)’, ‘[10,100)’, ‘[100,1k)’, ‘[1k,5k)’, ‘[5k,1w)’, ‘[1w,10w)’} | str | "[100,1k)" |
 | friend_user_num_range | The range of the number of friends that this user has. In the set of {‘0’, ‘[1,5)’, ‘[5,30)’, ‘[30,60)’, ‘[60,120)’, ‘[120,250)’, ‘250+’} | str | "250+" |
 | register_days | The days since this user has registered. | int64 | 1252 |
-| gender | An encrypted feature of the user. Each value indicates the position of “1” in the one-hot vector. Range: {0,1} | int64 | 1 |
-| age_range | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 1 |
-| onehot_feat0 | An encrypted feature. Range: {0, 1, ..., 54} | int64 | 14 |
-| onehot_feat1 | An encrypted feature. Range: {0, 1, ..., 1685} | int64 | 898 |
-| onehot_feat2 | An encrypted feature. Range: {0, 1, ..., 5} | int64 | 5 |
-| onehot_feat3 | An encrypted feature. Range: {0, 1, ..., 9} | int64 | 0 |
-| onehot_feat4 | An encrypted feature. Range: {0, 1, 2} | int64 | 2 |
-| onehot_feat5 | An encrypted feature. Range: {0, 1, ..., 52} | int64 | 27 |
-| onehot_feat6 | An encrypted feature. Range: {0, 1, ..., 391} | int64 | 153 |
-| onehot_feat7 | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 3 |
-| onehot_feat8 | An encrypted feature. Range: {0, 1, ..., 4} | int64 | 3 |
-| onehot_feat9 | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 1 |
-| onehot_feat10 | An encrypted feature. Range: {0, 1} | int64 | 0 |
-| onehot_feat11 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat0 | An encrypted feature of the user. Each value indicates the position of “1” in the one-hot vector. Range: {0,1} | int64 | 1 |
+| onehot_feat1 | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 1 |
+| onehot_feat2 | An encrypted feature. Range: {0, 1, ..., 54} | int64 | 14 |
+| onehot_feat3 | An encrypted feature. Range: {0, 1, ..., 1685} | int64 | 898 |
+| onehot_feat4 | An encrypted feature. Range: {0, 1, ..., 5} | int64 | 5 |
+| onehot_feat5 | An encrypted feature. Range: {0, 1, ..., 9} | int64 | 0 |
+| onehot_feat6 | An encrypted feature. Range: {0, 1, 2} | int64 | 2 |
+| onehot_feat7 | An encrypted feature. Range: {0, 1, ..., 52} | int64 | 27 |
+| onehot_feat8 | An encrypted feature. Range: {0, 1, ..., 391} | int64 | 153 |
+| onehot_feat9 | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 3 |
+| onehot_feat10 | An encrypted feature. Range: {0, 1, ..., 4} | int64 | 3 |
+| onehot_feat11 | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 1 |
 | onehot_feat12 | An encrypted feature. Range: {0, 1} | int64 | 0 |
 | onehot_feat13 | An encrypted feature. Range: {0, 1} | int64 | 0 |
 | onehot_feat14 | An encrypted feature. Range: {0, 1} | int64 | 0 |
 | onehot_feat15 | An encrypted feature. Range: {0, 1} | int64 | 0 |
 | onehot_feat16 | An encrypted feature. Range: {0, 1} | int64 | 0 |
 | onehot_feat17 | An encrypted feature. Range: {0, 1} | int64 | 0 |
-| onehot_feat18 | An encrypted feature. Range: {0, 1, ..., 4} | int64 | 2 |
+| onehot_feat18 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat19 | An encrypted feature. Range: {0, 1} | int64 | 0 |
+| onehot_feat20 | An encrypted feature. Range: {0, 1, ..., 4} | int64 | 2 |
 
 
 #### 4. Descriptions of the fields in video_features.csv
