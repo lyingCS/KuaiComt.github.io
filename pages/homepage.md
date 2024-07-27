@@ -73,12 +73,12 @@ table {
 
 The short descriptions for each feature filed are listed as below. Please refer to this [page](./detailed_statistics.html) for more details and examples.
 
-| **Feature**:  | Detailed Descriptions. |
+| **Feature**  | Detailed Descriptions. |
 |------------------------|---------------------------------------------------------------------------------------|
-| **User feature**:  | Users have abundant side information, e.g., user active degree, follow count. |
-| **Video feature**: | Videos have abundant side information, e.g., caption, duration. |
-| **Comment feature**: | Comments have abundant side information, e.g., comment content, comment like cnt. |
-| **V-inter feature** | Video-interactions have 12 features, e.g., comment stay time, play time, likes and follows. |
+| **User feature**  | Users have abundant side information, e.g., user active degree, follow count. |
+| **Video feature** | Videos have abundant side information, e.g., caption, duration. |
+| **Comment feature** | Comments have abundant side information, e.g., comment content, comment like cnt. |
+| **V-inter feature** | Video-interactions have 12 features, e.g., comment stay time, play time, likes, and follows. |
 | **C-inter feature** | Comment-interactions has 2 features, including 2 types of user feedback: likes and replies. |
 
 ## Download the data:
