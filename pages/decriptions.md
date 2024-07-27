@@ -97,9 +97,9 @@ File organization:
 | ------------------ | ----------------------------------------- | ----- | ------- |
 | video_id       | The ID of the video.                  | int64 | 107291063430 |
 | author_id | The ID of the author of this video. | int64 | 3087318004 |
-| video_type | Type of this video (NORMAL or AD). | int64 | "NORMAL" |
+| video_type | Type of this video (NORMAL or AD). | str | "NORMAL" |
 | upload_dt | Upload date of this video. | str | "2023-07-06" |
-| caption | The caption text of this video | int64 | "所以，怎么会没有遗憾呢#张睿  #李晟  #花非花雾非雾" |
+| caption | The caption text of this video | str | "所以，怎么会没有遗憾呢#张睿  #李晟  #花非花雾非雾" |
 | duration | The time duration of this duration (in milliseconds). | float | 36200.0 |
 | category | Category of this video | str | "明星娱乐" |
 
