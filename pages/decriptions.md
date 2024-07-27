@@ -67,9 +67,9 @@ File organization:
 | fans_user_num_range | The range of the number of fans of this user. In the set of {‘0’, ‘[1,10)’, ‘[10,100)’, ‘[100,1k)’, ‘[1k,5k)’, ‘[5k,1w)’, ‘[1w,10w)’} | str | "[100,1k)" |
 | friend_user_num_range | The range of the number of friends that this user has. In the set of {‘0’, ‘[1,5)’, ‘[5,30)’, ‘[30,60)’, ‘[60,120)’, ‘[120,250)’, ‘250+’} | str | "250+" |
 | register_days | The days since this user has registered. | int64 | 1252 |
-| gender | The gender of this user. | str | "M" |
-| age_range | The range of the age of this user. In the set of {’0-12‘, ’12-17‘, ‘18-23’, ‘24-30’, ‘31-40’, ’41-49‘, ‘50+’} | str | "12-17" |
-| onehot_feat0 | An encrypted feature of the user. Each value indicates the position of “1” in the one-hot vector. Range: {0,1, ..., 54} | int64 | 14 |
+| gender | An encrypted feature of the user. Each value indicates the position of “1” in the one-hot vector. Range: {0,1} | int64 | 1 |
+| age_range | An encrypted feature. Range: {0, 1, ..., 6} | int64 | 1 |
+| onehot_feat0 | An encrypted feature. Range: {0, 1, ..., 54} | int64 | 14 |
 | onehot_feat1 | An encrypted feature. Range: {0, 1, ..., 1685} | int64 | 898 |
 | onehot_feat2 | An encrypted feature. Range: {0, 1, ..., 5} | int64 | 5 |
 | onehot_feat3 | An encrypted feature. Range: {0, 1, ..., 9} | int64 | 0 |
