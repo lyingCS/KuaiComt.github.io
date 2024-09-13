@@ -55,22 +55,6 @@ table {
 
 where 'Impressions-V' denotes the impressions of videos to users, 'OpenComments-V' denotes the behavior of users opening the comments section, and 'Interactions-C' denotes user interactions with comments (such as likes or replies).
 
-In order to facilitate researchers to conduct experiments more quickly, we have also released a smaller version of the data.
-
-**KuaiSAR-1M**
-
-<style>
-table {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
-| Dataset  | #Users | #Videos | #Comments  | #Impressions-V |
-|-----|-----|-----|-----|-----|
-| KuaiComt | 34,701 | 82,452  | 16,352,904 | 119,696,682    |
-
 The short descriptions for each feature filed are listed as below. Please refer to this [page](./detailed_statistics.html) for more details and examples.
 
 | **Feature**  | Detailed Descriptions. |
