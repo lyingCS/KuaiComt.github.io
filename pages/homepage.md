@@ -75,11 +75,6 @@ OPTION 1. Download via your browser:
 
 You can download the dataset from this [link](https://zenodo.org/record/8181109).
 
-**Note:**
-
-* The 'KuaiComt.zip' file is for the complete **KuaiComt** dataset.
-* The 'KuaiComt-1M.zip' file is for the **KuaiComt-1M** dataset.
-
 The screenshot of the data download page:
 ![](../assets/fig/data_file.png)
 
