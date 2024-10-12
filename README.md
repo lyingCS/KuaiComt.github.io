@@ -22,11 +22,6 @@ OPTION 1. Download via your browser:
 
 You can download the dataset from this [link](https://zenodo.org/uploads/13922581).
 
-**Note:**
-
-* The 'KuaiComt.zip' file is for the complete **KuaiComt** dataset.
-![](../assets/fig/data_file.png)
-
 OPTION 2: Download via the 'wget' command tool:
 
 For the **KuaiComt** dataset:
