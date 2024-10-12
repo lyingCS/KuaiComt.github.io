@@ -16,7 +16,7 @@ The following figure provides an example of the dataset. When users enter the ap
 
 KuaiComt has been shared at [https://zenodo.org/record/13922581](https://zenodo.org/uploads/13922581).
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8181109.svg)](https://doi.org/10.5281/zenodo.8181109)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13922581.svg)](https://doi.org/10.5281/zenodo.13922581)
 
 OPTION 1. Download via your browser:
 
