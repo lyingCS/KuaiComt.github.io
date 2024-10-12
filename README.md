@@ -25,7 +25,6 @@ You can download the dataset from this [link](https://zenodo.org/record/8181109)
 **Note:**
 
 * The 'KuaiComt.zip' file is for the complete **KuaiComt** dataset.
-* The 'KuaiComt-1M.zip' file is for the **KuaiComt-1M** dataset.
 ![](../assets/fig/data_file.png)
 
 OPTION 2: Download via the 'wget' command tool:
@@ -36,14 +35,6 @@ wget https://zenodo.org/record/8181109/files/KuaiComt.zip
 
 unzip KuaiComt.zip
 ```
-
-For the **KuaiComt-1M** dataset:
-```bash
-wget https://zenodo.org/record/8181109/files/KuaiComt-1M.zip
-
-unzip KuaiComt-1M.zip
-```
-
 
 ## Citation
 
