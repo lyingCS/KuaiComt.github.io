@@ -14,13 +14,13 @@ The following figure provides an example of the dataset. When users enter the ap
 
 ## Download the data:
 
-KuaiComt has been shared at [https://zenodo.org/record/8181109](https://zenodo.org/record/8181109).
+KuaiComt has been shared at [https://zenodo.org/record/13922581](https://zenodo.org/uploads/13922581).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8181109.svg)](https://doi.org/10.5281/zenodo.8181109)
 
 OPTION 1. Download via your browser:
 
-You can download the dataset from this [link](https://zenodo.org/record/8181109).
+You can download the dataset from this [link](https://zenodo.org/uploads/13922581).
 
 **Note:**
 
