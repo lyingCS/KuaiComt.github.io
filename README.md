@@ -31,18 +31,9 @@ OPTION 2: Download via the 'wget' command tool:
 
 For the **KuaiComt** dataset:
 ```bash
-wget https://zenodo.org/record/8181109/files/KuaiComt.zip
+wget https://zenodo.org/record/13922581/files/KuaiComt.zip
 
 unzip KuaiComt.zip
-```
-
-## Citation
-
-If you find it helpful, please cite our paper:
- [![LINK](https://img.shields.io/badge/-Paper%20Link-lightgrey)](https://arxiv.org/abs/2306.07705) [![PDF](https://img.shields.io/badge/-PDF-red)](https://arxiv.org/pdf/2306.07705.pdf)
-
-```
-
 ```
 
 ## License
