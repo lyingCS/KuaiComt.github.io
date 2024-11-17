@@ -99,12 +99,4 @@ This work is licensed under a
 
 ## Contact
 
-If you have any questions, please feel free to contact us through [github issues](https://github.com/KuaiSAR/KuaiSAR.github.io/issues) or emails (zhangchangshuo@kuaishou.com)
-
-## Citation
-
-If you find it helpful, please cite our website (https://kuaicomt.github.io)
-
-```
-
-```
+If you have any questions, please feel free to contact us through [github issues](https://github.com/lyingCS/KuaiComt.github.io/issues)) or emails (zhangchangshuo@kuaishou.com)
