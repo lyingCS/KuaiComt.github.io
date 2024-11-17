@@ -33,7 +33,7 @@ Compared with other existing datasets, KuaiComt has the following advantages:
 ### Statistics
 
 Here we show some basic statistics.
-Check this page for more detailed [Descriptions and Analytics](./detailed_statistics.html).
+Check this page for more detailed [Descriptions](./detailed_statistics.html).
 
 KuaiComt contains the real behavior of 34,701 users on the Kuaishou app from September 30, 2023, to November 3, 2023. Due to the large number of comment impressions to users, we only provide data on user interactions with comments (likes and replies). Videos with fewer than 55 comments and comments with fewer than 2 interactions were filtered out. Additionally, video titles and comment texts were anonymized.
 
@@ -67,37 +67,23 @@ The short descriptions for each feature filed are listed as below. Please refer 
 
 ## Download the data:
 
-KuaiComt has been shared at [https://zenodo.org/record/8181109](https://zenodo.org/record/8181109).
+KuaiComt has been shared at [https://zenodo.org/record/13922581](https://zenodo.org/uploads/13922581).
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8181109.svg)](https://doi.org/10.5281/zenodo.8181109)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13922581.svg)](https://doi.org/10.5281/zenodo.13922581)
 
 OPTION 1. Download via your browser:
 
-You can download the dataset from this [link](https://zenodo.org/record/8181109).
-
-The screenshot of the data download page:
-![](../assets/fig/data_file.png)
+You can download the dataset from this [link](https://zenodo.org/uploads/13922581).
 
 OPTION 2: Download via the 'wget' command tool:
 
 For the **KuaiComt** dataset:
 
 ```bash
-wget https://zenodo.org/record/8181109/files/KuaiComt.zip
+wget https://zenodo.org/record/13922581/files/KuaiComt.zip
 
 unzip KuaiComt.zip
 ```
-
-For the **KuaiComt-1M** dataset:
-
-```bash
-wget https://zenodo.org/record/8181109/files/KuaiComt-1M.zip
-
-unzip KuaiComt-1M.zip
-```
-
-
-## License
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
@@ -117,8 +103,7 @@ If you have any questions, please feel free to contact us through [github issues
 
 ## Citation
 
-If you find it helpful, please cite our paper (
- [![LINK](https://img.shields.io/badge/-Paper%20Link-lightgrey)](https://arxiv.org/abs/2306.07705) [![PDF](https://img.shields.io/badge/-PDF-red)](https://arxiv.org/pdf/2306.07705.pdf) ) or cite our website (https://kuaisar.github.io)
+If you find it helpful, please cite our website (https://kuaicomt.github.io)
 
 ```
 
