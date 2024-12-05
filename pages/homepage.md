@@ -67,13 +67,20 @@ The short descriptions for each feature filed are listed as below. Please refer 
 
 ## Download the data:
 
-KuaiComt has been shared at [https://zenodo.org/record/13922581](https://zenodo.org/uploads/13922581).
+KuaiComt has been shared at [https://zenodo.org/records/13922581](https://zenodo.org/records/13922581).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13922581.svg)](https://doi.org/10.5281/zenodo.13922581)
 
+According to our company's data sharing policy, our datasets are made available through confidentiality agreements. 
+
+> In compliance with the recently enacted **Personal Information Protection Law** and **Data Security Assessment Measures for Cross-Border Data Transfer in China**, we currently provide datasets exclusively to Chinese entities (universities, research institutes, and companies).
+
+> You are required to send us your **name** and **institutional details**, after which we will provide you with the relevant confidentiality agreement. The dataset will be shared with you only after the agreement has been signed.
+
+
 OPTION 1. Download via your browser:
 
-You can download the dataset from this [link](https://zenodo.org/uploads/13922581).
+You can download the dataset from this [link](https://zenodo.org/records/13922581).
 
 OPTION 2: Download via the 'wget' command tool:
 
