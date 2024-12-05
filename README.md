@@ -14,7 +14,7 @@ The following figure provides an example of the dataset. When users enter the ap
 
 ## Download the data:
 
-KuaiComt has been shared at [https://zenodo.org/record/13922581](https://zenodo.org/uploads/13922581).
+KuaiComt has been shared at [https://zenodo.org/records/13922581](https://zenodo.org/records/13922581).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13922581.svg)](https://doi.org/10.5281/zenodo.13922581)
 
@@ -27,7 +27,7 @@ According to our company's data sharing policy, our datasets are made available 
 
 OPTION 1. Download via your browser:
 
-You can download the dataset from this [link](https://zenodo.org/uploads/13922581).
+You can download the dataset from this [link](https://zenodo.org/records/13922581).
 
 OPTION 2: Download via the 'wget' command tool:
 
