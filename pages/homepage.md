@@ -49,7 +49,7 @@ table {
 }
 </style>
 
-| Dataset | #Users  | #Videos | #Comments | #Impressions-V | #OpenComments-V | Interactions-C |
+| Dataset | #Users  | #Videos | #Comments | #Impressions-V | #OpenComments-V | #Interactions-C |
 |---------|---------|------------|---------|------------|------------|------------|
 | KuaiComt | 34,701 | 82,452 | 16,352,904 | 119,696,682 | 16,033,443 | 1,002,672 |
 
