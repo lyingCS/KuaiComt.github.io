@@ -94,7 +94,7 @@ unzip KuaiComt.zip
 
 ## Citation
 
-If you find our code or paper useful, please cite the paper:
+If you find our dataset useful, please cite the paper:
 
 ```
 @article{zhang2025comment,
