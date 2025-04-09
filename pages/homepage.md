@@ -119,4 +119,4 @@ This work is licensed under a
 
 ## Contact
 
-If you have any questions, please feel free to contact us through [github issues](https://github.com/lyingCS/KuaiComt.github.io/issues)) or emails (zhangchangshuo@kuaishou.com)
+If you have any questions, please feel free to contact us through [github issues](https://github.com/lyingCS/KuaiComt.github.io/issues)) or emails (linzihan03@kuaishou.com)
