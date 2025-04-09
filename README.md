@@ -38,6 +38,17 @@ wget https://zenodo.org/record/13922581/files/KuaiComt.zip
 unzip KuaiComt.zip
 ```
 
+If you find our code or paper useful, please cite the paper:
+
+```
+@article{zhang2025comment,
+  title={Comment Staytime Prediction with LLM-enhanced Comment Understanding},
+  author={Zhang, Changshuo and Lin, Zihan and Liu, Shukai and Liu, Yongqi and Li, Han},
+  journal={arXiv preprint arXiv:2504.01602},
+  year={2025}
+}
+```
+
 ## License
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
