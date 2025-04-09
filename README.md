@@ -38,6 +38,8 @@ wget https://zenodo.org/record/13922581/files/KuaiComt.zip
 unzip KuaiComt.zip
 ```
 
+## Citation
+
 If you find our code or paper useful, please cite the paper:
 
 ```
